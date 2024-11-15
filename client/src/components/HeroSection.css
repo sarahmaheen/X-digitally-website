@@ -1,0 +1,23 @@
+/* HeroSection.css */
+
+.hero-section {
+    /* background-image: url('../assests/circle.png');  */
+    background-image: url('../assests/bulb.png'); 
+    background-size: cover;
+    background-attachment: fixed; /* keeps background fixed */
+    background-position: center;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-y: auto; /* enables scrolling within the hero section */
+    color: white;
+  }
+  
+  .hero-section > div {
+    min-height: 100vh; /* Each child section takes full viewport height */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  

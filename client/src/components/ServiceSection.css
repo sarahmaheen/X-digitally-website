@@ -1,0 +1,102 @@
+/* Main container to hold the entire services section */
+.services-page {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Space between sections */
+    /* padding: 5rem; */
+    margin: 2rem;
+    /* border: 2px solid #5a5656; */
+    /* background-color: #fff; */
+    overflow: hidden;
+    color: #000;
+}
+
+/* Each service section */
+.service-section {
+    display: flex;
+    flex-direction: row; /* Default: Text on left, Image on right */
+    /* gap: 2rem; */
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(255, 255, 255, 0.2); /* Light border to make it look more like glass */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Adds the blur effect to the background */
+    border-radius: 12px; /* Rounded corners for a smooth glass effect */
+    padding: 1rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative;
+}
+
+/* Alternate layout: Image on left, Text on right */
+.service-section.reverse {
+    flex-direction: row-reverse; /* Switches the order */
+}
+.service-section.reverse img{
+    /* flex: 0.5; */
+    width: 90%;
+    /* padding: 20px;
+    border-radius: none;
+    border-left:2px solid #000;
+    border-bottom:2px solid #000; */
+
+    /* border-radius: 50%; */
+}
+
+.service-section.reverse h2{
+    font-size: 4rem;
+    justify-self: start;
+}
+.service-section.reverse p{
+    font-size: 0.7rem;
+}
+/* Text area styling */
+.service-text {
+    flex: 1; /* Takes up available space */
+    /* width: 50%; */
+    
+    /* position: absolute; */
+    /* height: ; */
+    /* font-size: 4rem; */
+    color: #333;
+    position: relative;
+
+
+}
+.service-text h2{
+    position: absolute;
+    /* bottom: ; */
+    left: 0;
+
+    font-size: 4rem;
+    /* align-self: flex-end; */
+    justify-self: end;
+}
+.service-text p{
+    font-size: 0.7rem;
+}
+
+
+/* Image area styling */
+.service-image {
+    flex: 1; /* Takes up available space */
+    max-width: 100%; /* Ensures the image fits */
+    /* padding: 0px; */
+    border-left:2px solid #000;
+    /* border-bottom:2px solid #000; */
+}
+
+.service-image img {
+    width: 80%;
+    height: auto;
+    /* padding: 2rem; */
+    /* border-radius: 8px;  */
+    border-bottom: #000;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .service-section {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+}

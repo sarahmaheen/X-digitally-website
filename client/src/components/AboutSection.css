@@ -1,0 +1,108 @@
+/* AboutSection.css */
+.about-page {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* gap: 5rem;  */
+    z-index: 999;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:#000; /* Semi-transparent black */
+    z-index: 999; /* Positioned above the content but below other elements */
+    opacity: 1; /* Keep overlay opacity high */
+    transition: transform 2s ease-out; /* Smooth transition for movement */
+}
+
+.title {
+    font-size: 6rem;
+    color: transparent;
+    margin: 0;
+    transition: transform 0.5s ease;
+    z-index: 2; /* Ensure title stays above the overlay */
+    -webkit-text-stroke: 2px black;  /* Outline thickness and color */
+    /* text-fill-color: white;  */
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.content {
+    width: 50%;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #000;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100%); /* Start from the left */
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.about-us-text {
+    font-size: 10rem;
+    font-weight: bold;
+    color:#000;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100%); /* Start from the right */
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.about-page .title {
+    margin-bottom: 5rem; /* Spacing between title and content */
+}
+
+.about-us-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Scroll-in effect when scrolled */
+.content.scrolled-in-left {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fade in */
+}
+
+.about-us-text.scrolled-in-right {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fade in */
+}
+
+/* Adjustments for responsive design */
+@media (max-width: 768px) {
+    .about-page {
+        height: auto;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 4rem;
+    }
+
+    .content-container {
+        flex-direction: column;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .about-us-text {
+        font-size: 5rem;
+        text-align: center;
+        padding: 20px;
+    }
+}

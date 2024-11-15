@@ -1,0 +1,68 @@
+/* LandingPage.css */
+
+.landing-page {
+    position: relative;
+    height: 200vh; /* Extra space for scroll effect */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    color: white;
+    gap: 10rem;
+}
+
+.heading {
+    position: relative;
+    z-index: 2; 
+    margin-bottom: 500px; 
+    /* -webkit-text-stroke-width: 2px solid black; */
+}
+
+.heading h1 {
+    margin: 0;
+    font-size: 7rem;
+    color: white;
+    transition: transform 0.9s ease;
+}
+
+.small-text {
+    position: absolute;
+    top: 20%;         /* Position from the top */
+    left: 20px;       /* Position from the left */
+    width: 20vw;      /* Set width to 30% of the viewport width */
+    height: 20vh;     /* Set height to 20% of the viewport height */
+    overflow: hidden; /* Hide overflow if the content exceeds specified height */
+    font-size: 1rem;
+    color: #000;
+    /* z-index: 2;       */
+    padding: 10px; 
+}
+
+/* Video container styles */
+.video-container {
+    position: absolute;
+    right: 0; /* Positioned to the right side */
+    bottom: 0; /* Positioned to the bottom */
+    width: 30vw;
+    height: 20vh;
+    overflow: hidden;
+    transition: width 1s ease, height 1s ease, transform 1s ease;
+    transform-origin: bottom right; /* Anchor expansion to bottom right */
+    z-index: 1; /* Lower z-index so it remains behind the text */
+    margin-top: 100px; /* Extra gap above the video */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Expanded video styling */
+.video-container.expanded {
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+}
