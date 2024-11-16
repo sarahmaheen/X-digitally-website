@@ -1,0 +1,286 @@
+.team-main-container {
+    display: flex;
+    background-color: #000000;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.team-members-container {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+   
+}
+
+.team-box {
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Required to position the text over the image */
+}
+
+/* Prime number boxes take up two columns and rows */
+.prime-box {
+    grid-column: span 2;
+    grid-row: span 2;
+    transform: scale(1.1);
+}
+
+/* Enlarge the second item to span 3 rows and 3 columns */
+.team-box:nth-child(2) {
+    grid-column: span 3;
+    grid-row: span 3;
+}
+
+/* Image wrapper */
+.image-wrapper {
+    width: 120px; /* Default size for non-prime boxes */
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: rotate(45deg); /* Rotate container for diamond shape */
+    margin-bottom: 10px;
+}
+
+/* Enlarge the image wrapper for prime boxes */
+.prime-box .image-wrapper {
+    width: 180px;
+    height: 180px;
+}
+
+/* Larger image for the second item */
+.team-box:nth-child(2) .image-wrapper {
+    width: 250px;
+    height: 250px;
+    border-left: 2px solid #000;
+    padding-left: 2rem;
+    margin: 2rem;
+}
+.team-box:nth-child(4) .image-wrapper {
+    width: 150px;
+    height: 150px;
+    border-left: 2px solid #000;
+    padding-left: 2rem;
+    margin: 2rem;
+}
+
+.team-box:nth-child(1) .image-wrapper {
+    width: 150px;
+    height: 150px;
+    border-left: 2px solid #000;
+    padding-left: 2rem;
+    margin: 2rem;
+}
+
+.team-box:nth-child(3) .image-wrapper {
+    width: 500px;
+    height: 500px;
+    border-left: 2px solid #fff;
+    padding-left: 2rem;
+    margin: 2rem;
+}
+
+.team-image {
+    width: 140%;
+    height: auto;
+    transform: rotate(-45deg); /* Rotate image to fit diamond shape */
+}
+
+/* Name and Role styling */
+.team-name, .team-role {
+    color: #fff; /* Ensure text is visible over image */
+    font-size: 1rem;
+    position: absolute; /* Position text over image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center text */
+    opacity: 0; /* Make text invisible initially */
+    transition: opacity 0.9s ease; /* Smooth transition for text visibility */
+}
+
+/* Make text visible on hover */
+.team-box:hover .team-name,
+.team-box:hover .team-role {
+    opacity: 1;
+}
+
+/* Regular box */
+.regular-box {
+    /* background-color: #ffffff; */
+}
+
+.team-box:hover {
+    transform: scale(1.05);
+}
+
+/* Team info section */
+.team-info-container {
+    flex: 1;
+    padding: 20px;
+    height: 200vh;
+    border-radius: 8px;
+    justify-self: flex-start;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    justify-content: center;
+    color: #fff;
+}
+
+.team-info-container h2 {
+    font-size: 10rem;
+    margin-bottom: 10px;
+}
+
+.team-info-container p {
+    font-size: 1em;
+    color: #fff;
+}
+
+/* TeamSection.css */
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.team-box.rotate .image-wrapper {
+    animation: rotate360 0.5s ease-in-out; /* Increased duration to 3s for slower rotation */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Default styles are for desktop */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+    .team-members-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  
+    .team-box:nth-child(2) .image-wrapper {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .team-box:nth-child(3) .image-wrapper {
+      width: 500px;
+      height: 500px;
+    }
+  
+    .team-name {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Medium screens (tablets) */
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .team-members-container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  
+    .team-box:nth-child(2) .image-wrapper {
+      width: 200px;
+      height: 200px;
+      padding-left: 1rem;
+      margin: 1rem;
+    }
+  
+    .team-box:nth-child(3) .image-wrapper {
+      width: 300px;
+      height: 300px;
+      padding-left: 1rem;
+      margin: 1rem;
+    }
+  
+    .team-name {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media (max-width: 767px) {
+    .team-members-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  
+    .team-box:nth-child(2) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  
+    .team-box:nth-child(3) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  
+    .team-box:nth-child(2) .image-wrapper {
+      width: 150px;
+      height: 150px;
+      padding-left: 0.5rem;
+      margin: 0.5rem;
+    }
+  
+    .team-box:nth-child(3) .image-wrapper {
+      width: 200px;
+      height: 200px;
+      padding-left: 0.5rem;
+      margin: 0.5rem;
+    }
+  
+    .team-name {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Extra small screens (small phones) */
+  @media (max-width: 480px) {
+    .team-members-container {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  
+    .team-box {
+      padding: 10px;
+    }
+  
+    .team-box:nth-child(2),
+    .team-box:nth-child(3) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  
+    .team-box:nth-child(2) .image-wrapper,
+    .team-box:nth-child(3) .image-wrapper {
+      width: 120px;
+      height: 120px;
+      padding-left: 0;
+      margin: 0.5rem;
+    }
+  
+    .team-name {
+      font-size: 1.2rem;
+    }
+  }
+  

@@ -27,7 +27,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      <div className="heading">
+      <div className="Landing-heading">
         <h1 style={{ transform: `translateX(${scrollPosition % 2 === 0 ? scrollPosition / 2 : -scrollPosition / 3}px)` }}>TAKING</h1>
         <h1 style={{ transform: `translateX(${scrollPosition % 2 !== 0 ? scrollPosition / 2 : -scrollPosition / 3}px)` }}>BRANDS</h1>
         <h1 style={{ transform: `translateX(${scrollPosition % 2 === 0 ? scrollPosition / 2 : -scrollPosition / 3}px)` }}>FURTHER</h1>

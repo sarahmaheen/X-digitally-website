@@ -12,18 +12,22 @@
     gap: 10rem;
 }
 
-.heading {
+.Landing-heading {
     position: relative;
     z-index: 2; 
-    margin-bottom: 500px; 
+    /* margin-bottom: 500px; */
+    margin: 200px 500px  ;
+    /* text-align: center; */
     /* -webkit-text-stroke-width: 2px solid black; */
 }
 
-.heading h1 {
+.Landing-heading h1 {
     margin: 0;
     font-size: 7rem;
-    color: white;
+    /* color: white; */
+    color: transparent;
     transition: transform 0.9s ease;
+    -webkit-text-stroke: 2px black;
 }
 
 .small-text {

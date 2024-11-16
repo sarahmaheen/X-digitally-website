@@ -1,0 +1,144 @@
+/* src/components/Footer.css */
+.footer-main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    flex-wrap: wrap;
+    height: auto;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* grid-template-columns: 1fr 3fr;  */
+    gap: 20px; /* Space between the heading and form */
+    width: 100%;
+    max-width: 100vw; 
+    align-items: center; /* Vertically center content */
+    background-color: yellow;
+
+  }
+  
+  .form-heading {
+    flex: 1;
+    font-size: 2rem;
+    margin-right: 20px; /* Optional: space between heading and form */
+    white-space: nowrap; 
+  }
+  
+  .footer-form-container {
+    width: 100%;
+    background-color: #fff;
+  }
+  
+  /* .footer-form-container h3 {
+    margin-bottom: 10px;
+  } */
+  
+  .contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    padding: 2rem;
+    margin: 2rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 8px 0;
+    margin-bottom: 3rem;
+    border: none;
+    border-bottom: 1px solid #ffffff83;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #ccc;
+  }
+  
+  .contact-form button {
+    padding: 8px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 20%;
+    align-self: center;
+  }
+  
+  .footer-grid-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+    border-top: 2px solid #fff;
+  }
+  
+  .footer-cell h4 {
+    margin-bottom: 8px;
+  }
+  
+  .footer-cell p {
+    margin: 4px 0;
+  }
+  
+  .end-footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .end-footer p {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-main-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-form-container,
+    .footer-grid-container {
+      width: 100%;
+    }
+  
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    color: inherit;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #ddd;
+  }
+  

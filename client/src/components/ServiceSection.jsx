@@ -1,30 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './ServiceSection.css';
 
-// Import images directly
-import dm from '../assests/dm.png'; 
+import dm from '../assests/dm.png';
 import videoEdit from '../assests/videoEdit.png';
 import website from '../assests/website.png';
 
 const ServiceSection = () => {
+  const imageRefs = useRef([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      imageRefs.current.forEach((img, index) => {
+        if (img) {
+          // Increase the speed by adjusting the translateY value relative to the scroll position
+          const offset = window.scrollY * -0.09; // 0.3 controls the speed; increase for faster scroll effect
+          img.style.transform = `translateY(${offset}px)`;
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const services = [
     {
       title: "Digital Marketing",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita mollitia magni cum eaque nihil cumque blanditiis minima et distinctio neque, nulla temporibus, nam dolor? Sapiente distinctio a hic blanditiis esse?",
-      imageUrl: dm, // Use the imported image variable here
+      imageUrl: dm,
     },
     {
       title: "Video Edit",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam soluta dolorum dignissimos possimus officiis ut aperiam, repellat, ad alias autem qui fugiat at molestiae eum obcaecati quis aliquam! Assumenda, totam. Sint, dolorum tempora? Totam, tempore dolorum? Animi soluta numquam ab eum nobis praesentium sequi fuga.",
-      imageUrl: videoEdit, // Use the imported image variable here
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam soluta dolorum dignissimos possimus officiis ut aperiam, repellat, ad alias autem qui fugiat at molestiae eum obcaecati quis aliquam! Assumenda, totam.",
+      imageUrl: videoEdit,
     },
     {
       title: "Website Development",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui quia, deserunt a ullam unde, quos veniam voluptate eius itaque, non distinctio voluptatum blanditiis earum dolor architecto? Quibusdam saepe numquam quam eius ex, nobis nisi, minus facilis tenetur, repellat unde! Excepturi animi molestiae sit. Magnam corporis similique accusamus quidem a quibusdam.",
-      imageUrl: website, // Use the imported image variable here
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui quia, deserunt a ullam unde, quos veniam voluptate eius itaque, non distinctio voluptatum blanditiis earum dolor architecto? Quibusdam saepe numquam.",
+      imageUrl: website,
     },
   ];
 
@@ -32,7 +48,7 @@ const ServiceSection = () => {
     <div className="services-page">
       {services.map((service, index) => (
         <div
-          className={`service-section ${index % 2 === 1 ? 'reverse' : ''}`} // Alternates the direction
+          className={`service-section ${index % 2 === 1 ? 'reverse' : ''}`}
           key={index}
         >
           <div className="service-text">
@@ -40,11 +56,14 @@ const ServiceSection = () => {
             <p>{service.description}</p>
           </div>
           <div className="service-image">
-            <img src={service.imageUrl} alt={service.title} />
+            <img
+              ref={(el) => (imageRefs.current[index] = el)}
+              src={service.imageUrl}
+              alt={service.title}
+            />
           </div>
         </div>
       ))}
-      {/* <p></p> */}
     </div>
   );
 };
