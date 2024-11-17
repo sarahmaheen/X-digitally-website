@@ -14,7 +14,7 @@ const ServiceSection = () => {
         if (img) {
           // Increase the speed by adjusting the translateY value relative to the scroll position
           const offset = window.scrollY * -0.09; // 0.3 controls the speed; increase for faster scroll effect
-          img.style.transform = `translateY(${offset}px)`;
+          img.style.transform = `translateY(-${offset}px)`;
         }
       });
     };

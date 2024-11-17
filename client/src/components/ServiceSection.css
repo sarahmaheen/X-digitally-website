@@ -4,143 +4,114 @@
     display: flex;
     flex-direction: column;
     gap: 3rem; /* Space between sections */
-    /* padding: 5rem; */
     margin: 2rem;
-    /* border: 2px solid #5a5656; */
-    /* background-color: #fff; */
     overflow: hidden;
     color: #000;
-    /* background-color: blue; */
 }
 
 /* Each service section */
 .service-section {
     display: flex;
-    flex-direction: row; /* Default: Text on left, Image on right */
-    /* gap: 2rem; */
+    flex-direction: row; /* Stack text and image vertically by default */
     align-items: center;
     justify-content: center;
     border: 1.5px solid rgba(255, 255, 255, 0.2); /* Light border to make it look more like glass */
     background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
     backdrop-filter: blur(10px); /* Adds the blur effect to the background */
     border-radius: 12px; /* Rounded corners for a smooth glass effect */
-    padding: 1rem; 
+    padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     position: relative;
-    height: 60vh;
-    width: 80vw
+    height: auto;
+    width: 80vw;
+    gap: 1rem; /* Space between text and image */
 }
 
-/* Alternate layout: Image on left, Text on right */
+/* Alternate layout: Image after content in reverse layout */
 .service-section.reverse {
-    /* position: absolute; */
-    position: relative;
-    flex-direction: row-reverse; /* Switches the order */
-}
-.service-section.reverse img{
-    /* flex: 0.5; */
-    width: 90%;
-    height: 40vh;
-    width: 40vw;
-    /* left: 0; */
-    /* padding: 20px;
-    border-radius: none;
-    border-left:2px solid #000;
-    border-bottom:2px solid #000; */
-
-    /* border-radius: 50%; */
-    overflow: hidden;
+    flex-direction: column-reverse; /* Switches the order */
 }
 
-
-.service-section.reverse h2{
-    font-size: 4rem;
-    justify-self: start;
-
-}
-.service-section.reverse p{
-    font-size: 0.7rem;
-}
 /* Text area styling */
 .service-text {
-    flex: 1; 
-    width: 50%;
-    left: 1%;
-    
-    /* position: absolute; */
-    /* height: ; */
-    /* font-size: 4rem; */
-    color: #333;
-    /* position: relative; */
-    position: absolute;
-    /* color: red; */
-    /* background-color: red; */
-    /* padding: 3%; */
-    padding-right: 3%;
-
-
-
-
-
+    flex: 1;
+    width: 100%; /* Full width for better responsiveness */
+    padding: 1rem;
+    text-align: center; /* Center-align text */
 }
 
-
-.service-section.reverse .service-text{
-    flex: 1; 
-    width: 50%;
-    right: 1%;
-    
-    /* position: absolute; */
-    /* height: ; */
-    /* font-size: 4rem; */
-    color: #333;
-    /* position: relative; */
-    position: absolute;
-    /* color: red; */
-    /* background-color: red; */
-    /* padding: 3%; */
-    padding-right: 3%;
-}
-.service-text h2{
-    /* position: absolute; */
-    /* bottom: ; */
-    /* left: 0; */
-
+.service-text h2 {
     font-size: 2rem;
-    /* align-self: flex-end; */
-    /* justify-self: start; */
-    /* left: ; */
-    /* top: 20; */
-    bottom: 0;
+    margin-bottom: 1rem;
 }
-.service-text p{
+
+.service-text p {
     font-size: 1rem;
 }
 
-
 /* Image area styling */
 .service-image {
-    flex: 1; /* Takes up available space */
-    max-width: 100%; /* Ensures the image fits */
-    /* padding: 0px; */
-    /* border-left:2px solid #000; */
-    /* border-bottom:2px solid #000; */
+    flex: 1;
+    max-width: 100%;
     overflow: hidden;
 }
 
 .service-image img {
-    position: absolute;
-    width: 120%;
-    height: 40vh;
-    width: 40vw;
-    padding: 2rem;
-    /* border-radius: 8px;  */
-    border-bottom:2px solid #000;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    padding: 1rem;
+    border-bottom: 2px solid #000;
 }
 
 /* Add responsiveness for smaller screens */
 @media (max-width: 768px) {
+    .services-page {
+        margin: 1rem;
+    }
+
     .service-section {
-        flex-direction: column; /* Stack vertically on smaller screens */
+        gap: 1rem; /* Adjust gap for smaller screens */
+        padding: 1rem;
+        height: auto; /* Allow the section to adjust based on content */
+        flex-direction: column;
+    }
+
+    .service-text {
+        width: 100%; /* Make text area take full width */
+        padding: 0.5rem;
+    }
+
+    .service-text h2 {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    .service-text p {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .service-image img {
+        width: 100%; /* Make the image fit the container */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Add responsiveness for even smaller screens (mobile portrait) */
+@media (max-width: 480px) {
+    .service-section {
+        gap: 1rem; /* Reduce the gap between sections */
+        padding: 0.5rem; /* Adjust padding for mobile */
+    }
+
+    .service-text h2 {
+        font-size: 1.3rem; /* Further reduce header font size */
+    }
+
+    .service-text p {
+        font-size: 0.8rem; /* Further reduce text font size */
+    }
+
+    .service-image img {
+        width: 100%; /* Make the image responsive */
+        height: 100vh; /* Maintain aspect ratio */
     }
 }

@@ -222,7 +222,7 @@
   /* Small screens (phones) */
   @media (max-width: 767px) {
     .team-members-container {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
   
     .team-box:nth-child(2) {
@@ -252,12 +252,26 @@
     .team-name {
       font-size: 1.5rem;
     }
+
+
+    .team-info-container h2 {
+      font-size: 6rem;
+      margin-bottom: 10px;
+  }
   }
   
   /* Extra small screens (small phones) */
   @media (max-width: 480px) {
+
+    .team-main-container {
+      display: flex;
+      flex-direction: column-reverse;
+      background-color: #000000;
+      padding: 20px;
+      overflow: hidden;
+  }
     .team-members-container {
-      grid-template-columns: 1fr;
+      grid-template-columns: 100px;
       gap: 8px;
     }
   
@@ -282,5 +296,31 @@
     .team-name {
       font-size: 1.2rem;
     }
+
+
+    .team-info-container {
+      flex: 1;
+      padding: 20px;
+      height: 200vh;
+      border-radius: 8px;
+      justify-self: flex-start;
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      /* justify-content: space-around; */
+      justify-content: center;
+      color: #fff;
+  }
+  
+  .team-info-container h2 {
+      font-size: 5rem;
+      margin-bottom: 10px;
+  }
+  
+  .team-info-container p {
+      font-size: 1em;
+      color: #fff;
+  }
+  
   }
   

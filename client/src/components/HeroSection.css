@@ -1,23 +1,170 @@
-/* HeroSection.css */
 
-.hero-section {
-    /* background-image: url('../assests/circle.png');  */
+/* .hero-section {
+   
     background-image: url('../assests/bulb.png'); 
     background-size: cover;
-    background-attachment: fixed; /* keeps background fixed */
+    background-attachment: fixed; 
     background-position: center;
     width: 100vw;
     min-height: 100vh;
-    overflow-y: auto; /* enables scrolling within the hero section */
+    overflow-y: auto; 
     color: white;
   }
   
   .hero-section > div {
-    min-height: 100vh; /* Each child section takes full viewport height */
+    min-height: 100vh; 
     
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-  }
+  } */
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* HeroSection.css */
+/* .hero-section {
+  background-image: url('../assests/bulb.png'); 
+  background-size: cover;
+  background-attachment: fixed; 
+  background-position: center;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-y: auto; 
+  color: white;
+  position: relative; 
+}
+
+.random-boxes-container {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10; 
+}
+
+
+.hero-section > section {
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* HeroSection.css */
+
+/* Define the custom font using @font-face */
+@font-face {
+  font-family: 'CustomFont'; /* Custom name for the font */
+  src: url('../fonts/GarotaSans-Regular-FFP.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'wolo'; /* Custom name for the font */
+  src: url('../fonts/Woliu\ Maners\ Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'laker'; /* Custom name for the font */
+  src: url('../fonts/The\ Laker.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply the custom font to all heading tags */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'CustomFont', sans-serif; /* Fallback to sans-serif if font fails */
+}
+
+/* Apply a different font to all paragraphs */
+/* p {
+  font-family: 'wolo', sans-serif; 
+} */
+
+div{
+  font-family: 'wolo', sans-serif;
+}
+p {
+  font-family: 'laker', sans-serif; 
+}
+
+/* HeroSection.css */
+.hero-section {
+  background-image: url('../assests/bulb.png'); 
+  background-size: cover;
+  background-attachment: fixed; /* keeps background fixed */
+  background-position: center;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-y: auto; 
+  overflow-y: hidden;
+  color: white;
+  position: relative; /* Needed to position random boxes correctly */
+  overflow-x: hidden;
+}
+
+.random-boxes-container {
+  position: absolute; /* Position it on top of everything */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Make sure this does not interfere with the page interactions */
+  z-index: 10; /* Ensure it's above the content */
+}
+
+/* Hero Section styling for inner sections */
+.hero-section > section {
+  min-height: 100vh; /* Each child section takes full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
