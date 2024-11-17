@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4aeb054d.css",
+    "main.js": "/static/js/main.f83cdbfe.js",
+    "static/media/juveria.png": "/static/media/juveria.9edc562fbe90c67d5be1.png",
+    "static/media/abbas.png": "/static/media/abbas.e3f48c0d6486936916b8.png",
+    "static/media/videoEdit.png": "/static/media/videoEdit.614b3dbea9d9282159ea.png",
+    "static/media/website.png": "/static/media/website.1f8ba0b3f39a2c8df6d1.png",
+    "static/media/sara.png": "/static/media/sara.b006aef64bd4ae648de7.png",
+    "static/media/junaid.png": "/static/media/junaid.c49639ca785b9c201ec6.png",
+    "static/media/dm.png": "/static/media/dm.1a76596d4cf8c36bda05.png",
+    "static/media/haseeb.png": "/static/media/haseeb.3ca9988ae4b09b37290a.png",
+    "static/media/bulb.png": "/static/media/bulb.69e682e77a5b3a8b6508.png",
+    "static/media/GarotaSans-Regular-FFP.ttf": "/static/media/GarotaSans-Regular-FFP.f7d36680e278c3c26513.ttf",
+    "static/media/The Laker.otf": "/static/media/The Laker.416571693efc5a9a86bf.otf",
+    "static/media/Woliu Maners Demo.ttf": "/static/media/Woliu Maners Demo.82718f7b2b61b0a47495.ttf",
+    "index.html": "/index.html",
+    "main.4aeb054d.css.map": "/static/css/main.4aeb054d.css.map",
+    "main.f83cdbfe.js.map": "/static/js/main.f83cdbfe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4aeb054d.css",
+    "static/js/main.f83cdbfe.js"
+  ]
+}
