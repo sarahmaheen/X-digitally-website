@@ -116,7 +116,7 @@ const TeamSection = () => {
             className={`team-box ${isPrime(index + 1) ? 'prime-box' : 'regular-box'}`}
             style={{
               // Apply dynamic Y position based on scrollY value
-              transform: `translateY(${scrollY * -0.02}px)`, // The images move 0.2px for every 1px scrolled
+              transform: `translateY(${scrollY * 0.01}px)`, // The images move 0.2px for every 1px scrolled
               transition: 'transform 0.9s ease-out', // Smooth transition
             }}
           >

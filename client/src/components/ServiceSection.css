@@ -12,34 +12,32 @@
 /* Each service section */
 .service-section {
     display: flex;
-    flex-direction: row; /* Stack text and image vertically by default */
+    flex-direction: row; /* Stack text and image horizontally */
     align-items: center;
-    justify-content: center;
-    border: 1.5px solid rgba(255, 255, 255, 0.2); /* Light border to make it look more like glass */
+    justify-content: space-between; /* Space out text and image */
+    border: 1.5px solid rgba(255, 255, 255, 0.2); /* Light border for glass effect */
     background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Adds the blur effect to the background */
-    border-radius: 12px; /* Rounded corners for a smooth glass effect */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    border-radius: 12px; /* Rounded corners */
     padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    position: relative;
-    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
     width: 80vw;
     gap: 1rem; /* Space between text and image */
 }
 
-/* Alternate layout: Image after content in reverse layout */
+/* Alternate layout: Image after content */
 .service-section.reverse {
-    flex-direction: column-reverse; /* Switches the order */
+    flex-direction: row-reverse; 
 }
 
 /* Text area styling */
 .service-text {
     flex: 1;
-    width: 100%; /* Full width for better responsiveness */
     padding: 1rem;
     text-align: center; /* Center-align text */
 }
 
+/* Heading and paragraph in the text area */
 .service-text h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -52,7 +50,6 @@
 /* Image area styling */
 .service-image {
     flex: 1;
-    max-width: 100%;
     overflow: hidden;
 }
 
@@ -63,55 +60,66 @@
     border-bottom: 2px solid #000;
 }
 
-/* Add responsiveness for smaller screens */
+/* Responsive styling for tablet screens */
 @media (max-width: 768px) {
     .services-page {
         margin: 1rem;
     }
 
     .service-section {
-        gap: 1rem; /* Adjust gap for smaller screens */
+        gap: 1rem;
         padding: 1rem;
-        height: auto; /* Allow the section to adjust based on content */
-        flex-direction: column;
+        flex-direction: column; /* Stack elements vertically */
     }
-
-    .service-text {
-        width: 100%; /* Make text area take full width */
-        padding: 0.5rem;
+    .service-section.reverse {
+        flex-direction: column-reverse; 
     }
 
     .service-text h2 {
-        font-size: 1.5rem; /* Reduce font size */
+        font-size: 1.5rem;
     }
 
     .service-text p {
-        font-size: 0.9rem; /* Adjust font size */
+        font-size: 0.9rem;
     }
 
     .service-image img {
-        width: 100%; /* Make the image fit the container */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%;
     }
 }
 
-/* Add responsiveness for even smaller screens (mobile portrait) */
+/* Responsive styling for mobile screens */
+@media (max-width: 650px) {
+    .service-image img {
+        width: 90%;
+    }
+    .service-section.reverse {
+        flex-direction: column-reverse; 
+    }
+}
+
 @media (max-width: 480px) {
-    .service-section {
-        gap: 1rem; /* Reduce the gap between sections */
-        padding: 0.5rem; /* Adjust padding for mobile */
+    .services-page {
+        margin: 1rem;
     }
 
+    .service-section {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+
+    .service-section.reverse {
+        flex-direction: column-reverse; 
+    }
     .service-text h2 {
-        font-size: 1.3rem; /* Further reduce header font size */
+        font-size: 1.3rem;
     }
 
     .service-text p {
-        font-size: 0.8rem; /* Further reduce text font size */
+        font-size: 0.8rem;
     }
 
     .service-image img {
-        width: 100%; /* Make the image responsive */
-        height: 100vh; /* Maintain aspect ratio */
+        width: 100%;
     }
 }
