@@ -129,16 +129,17 @@ h1, h2, h3, h4, h5, h6 {
 } */
 
 div{
-  font-family: 'wolo', sans-serif;
+  font-family: 'CustomFont', sans-serif;
 }
 p {
-  font-family: 'laker', sans-serif; 
+  font-family: 'CustomFont', sans-serif; 
 }
 
 /* HeroSection.css */
 .hero-section {
-  background-image: url('../assests/bulb.png'); 
-  background-size: cover;
+  /* background-image: url('../assests/bulb.png');  */
+  background-color: #fff;
+  /* background-size: cover; */
   background-attachment: fixed; /* keeps background fixed */
   background-position: center;
   width: 100vw;

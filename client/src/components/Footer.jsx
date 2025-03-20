@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
         <div className="contact-info">
           <p><Mail size={16} /> info@company.com</p>
-          <p><Phone size={16} /> +1 (555) 123-4567</p>
+          <p><Phone size={16} />948894 23378</p>
           <div className="social-icons">
             <a href="#" className="icon"><Facebook size={20} /></a>
             <a href="#" className="icon"><Twitter size={20} /></a>
