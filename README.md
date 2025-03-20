@@ -83,11 +83,3 @@ Please ensure your code adheres to the project's coding standards and includes r
 
 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-arduino
-Copy
-Edit
-
-This template provides a clear and organized overview of your project's structure, technologies used, setup instructions, and contribution guidelines. Feel free to customize any section to better fit your project's specifics.
-::contentReference[oaicite:0]{index=0}
- 
